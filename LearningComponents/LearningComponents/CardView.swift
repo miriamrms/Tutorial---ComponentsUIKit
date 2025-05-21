@@ -28,7 +28,7 @@ class CardView: UIView{
     }()
     
     //Image
-    private var backgroundImageView: UIView = {
+    private var colorBackgroundView: UIView = {
         let bgView = UIView()
         bgView.translatesAutoresizingMaskIntoConstraints = false
         bgView.backgroundColor = .blue3
@@ -96,10 +96,10 @@ class CardView: UIView{
     
     private func addComponents(){
         addSubview(hStack)
-        backgroundImageView.addSubview(cardImage)
+        colorBackgroundView.addSubview(cardImage)
         vStack.addArrangedSubview(cardTitle)
         vStack.addArrangedSubview(cardDescription)
-        hStack.addArrangedSubview(backgroundImageView)
+        hStack.addArrangedSubview(colorBackgroundView)
         hStack.addArrangedSubview(vStack)
         hStack.isLayoutMarginsRelativeArrangement = true
         hStack.layoutMargins = UIEdgeInsets(top: 10, left: 13, bottom: 10, right: 13)
@@ -112,13 +112,13 @@ class CardView: UIView{
             hStack.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             hStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
-            cardImage.centerXAnchor.constraint(equalTo: backgroundImageView.centerXAnchor),
-            cardImage.centerYAnchor.constraint(equalTo: backgroundImageView.centerYAnchor),
+            cardImage.centerXAnchor.constraint(equalTo: colorBackgroundView.centerXAnchor),
+            cardImage.centerYAnchor.constraint(equalTo: colorBackgroundView.centerYAnchor),
             cardImage.widthAnchor.constraint(equalToConstant: 62),
             cardImage.heightAnchor.constraint(equalToConstant: 62),
             
-            backgroundImageView.widthAnchor.constraint(equalToConstant: 80),
-            backgroundImageView.heightAnchor.constraint(equalToConstant: 72)
+            colorBackgroundView.widthAnchor.constraint(equalToConstant: 80),
+            colorBackgroundView.heightAnchor.constraint(equalToConstant: 72)
             
         ])
     }
